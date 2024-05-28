@@ -1,0 +1,3 @@
+#!./shp
+args = <? printf "'%s' " "$@" ?>
+hello world! it is <? date ?>
