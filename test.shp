@@ -1,3 +1,7 @@
 #!./shp
-args = <? printf "'%s' " "$@" ?>
-hello world! it is <? date ?>
+<?
+coin () {
+  return "$(cat /dev/urandom | tr -d '\000-/2-\377' | head -c 1)"
+}
+?>hello world! it is <? date | tr -d '\n' ?>
+i flipped a coin and it landed on <? if coin; then ?>heads<? else ?>tails<? fi ?>!
